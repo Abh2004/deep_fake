@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Deepfake Detector{% endblock %}</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom styles -->
+    <style type="text/tailwindcss">
+        @layer components {
+            .btn-primary {
+                @apply px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transition-colors duration-200;
+            }
+            .btn-secondary {
+                @apply px-4 py-2 bg-gray-200 text-gray-800 font-semibold rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-75 transition-colors duration-200;
+            }
+            .card {
+                @apply bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100;
+            }
+            .card-header {
+                @apply bg-gray-50 px-6 py-4 border-b border-gray-100;
+            }
+            .card-body {
+                @apply p-6;
+            }
+            .form-control {
+                @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+            }
+        }
+    </style>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <header class="mb-8">
+            <div class="flex items-center justify-center">
+                <i class="fas fa-video text-blue-600 text-3xl mr-3"></i>
+                <h1 class="text-3xl font-bold text-gray-900">Deepfake Video Detector</h1>
+            </div>
+            <p class="text-center text-gray-600 mt-2">Upload a video to detect potential deepfakes</p>
+        </header>
+        
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        
+        <footer class="mt-12 text-center text-gray-500 text-sm">
+            <p>Advanced Deepfake Detection Technology</p>
+            <p class="mt-1">© {% now "Y" %} Deepfake Detector - AI-powered video analysis</p>
+        </footer>
+    </div>
+</body>
+</html>
